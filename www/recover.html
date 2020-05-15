@@ -1,0 +1,27 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+<h3>Document recover<br><small style="color: #7a7a7a; font-size: 0.625em;">Click to restore</small></h3>
+<br>
+Click in the button bellow to start the process<br>
+<input type="text" id="doc_id" name="doc_id" value="{{ frappe.form_dict['key'] }}" hidden/>
+<input type="submit" class="btn btn-primary" id="btn_reset" value="Restore"/>
+{% endblock %}
+{% block script %}
+<script>
+$(document).ready(function() {
+	var doc_id = $("#doc_id").val();
+
+	$("#btn_reset").click(function(){
+		frappe.call({
+		method: "devjupiter.api.restore",
+		args: {
+			"name":doc_id
+		},
+		callback: function(r){ }
+		});
+	});
+});
+</script>
+{% endblock %}
