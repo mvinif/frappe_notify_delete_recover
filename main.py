@@ -52,7 +52,7 @@ def restore(name):
 	print(name)
 	deleted = frappe.get_doc('Deleted Document', name)
 	if deleted.restored == 1:
-		frappe.msgprint(_("Documento restored"))
+		frappe.msgprint(_("Document restored"))
 		raise Exception('Document already been restored')
 	doc = frappe.get_doc(json.loads(deleted.data))
 	try:
