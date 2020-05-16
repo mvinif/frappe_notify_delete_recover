@@ -11,6 +11,7 @@ app_color = "grey"
 app_email = ""
 app_license = "MIT"
 
+## insert code below in your hook.py file ##
 doc_events = {
 	"*": {
 		"after_insert": "recover.main.notify_deleted"
