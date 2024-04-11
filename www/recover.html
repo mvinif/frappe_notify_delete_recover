@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 	$("#btn_reset").click(function(){
 		frappe.call({
-		method: "dev.api.restore",
+		method: "myfrappe.api.restore",
 		args: {
 			"name":doc_id
 		},
